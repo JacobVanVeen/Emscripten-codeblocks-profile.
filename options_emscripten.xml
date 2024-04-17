@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_compiler_options>
+  <Program name="C" value="emcc.bat"/>
+  <Program name="CPP" value="em++.bat"/>
+  <Program name="LD" value="em++.bat"/>
+  <Program name="DBGconfig" value="gdb_debugger:Default"/>
+  <Program name="LIB" value="em++.bat"/>
+  <Program name="WINDRES" value=""/>
+  <Program name="MAKE" value=""/>
+  <Switch name="includeDirs" value="-I"/>
+  <Switch name="libDirs" value="-L"/>
+  <Switch name="linkLibs" value="-l"/>
+  <Switch name="defines" value="-D"/>
+  <Switch name="genericSwitch" value="-"/>
+  <Switch name="objectExtension" value="o"/>
+  <Switch name="forceFwdSlashes" value="false"/>
+  <Switch name="forceLinkerUseQuotes" value="false"/>
+  <Switch name="forceCompilerUseQuotes" value="false"/>
+  <Switch name="needDependencies" value="true"/>
+  <Switch name="logging" value="default"/>
+  <Switch name="libPrefix" value="lib"/>
+  <Switch name="libExtension" value="a"/>
+  <Switch name="linkerNeedsLibPrefix" value="false"/>
+  <Switch name="linkerNeedsLibExtension" value="false"/>
+  <Switch name="linkerNeedsPathResolved" value="false"/>
+  <Switch name="supportsPCH" value="true"/>
+  <Switch name="PCHExtension" value="gch"/>
+  <Switch name="UseFlatObjects" value="false"/>
+  <Switch name="UseFullSourcePaths" value="true"/>
+  <Switch name="includeDirSeparator" value=" "/>
+  <Switch name="libDirSeparator" value=" "/>
+  <Switch name="objectSeparator" value=" "/>
+  <Switch name="statusSuccess" value="0"/>
+  <Switch name="Use83Paths" value="false"/>
+  <Option name="Preserve whitespace in JavaScript." option="-g1" category="debug" additionalLibs="-g1"/>
+  <Option name="Preserve function names in compiled code." option="-g2" category="debug" additionalLibs="-g2"/>
+  <Option name="Preserve whitespace, function names, and LLVM debug info (DWARF)." option="-g3" category="debug" additionalLibs="-g3"/>
+  <Option name="Generate source-map." category="debug" additionalLibs="-gsource-map"/>
+  <Option name="Allow normal runtime exiting with return code passing." option="--emrun" category="general"/>
+  <Option name="Embeds a simple CPU profiler onto the generated page." category="debug" additionalLibs="--cpuprofiler"/>
+  <Option name="Embeds a memory allocation tracker onto the generated page." category="debug" additionalLibs="--memoryprofiler"/>
+  <Option name="Embeds a thread activity profiler onto the generated page." category="debug" additionalLibs="--threadprofiler"/>
+  <Option name="Enable specific compiler warnings" option="-W" category="general"/>
+  <Option name="Treat warnings as errors" option="-Werror" category="general"/>
+  <Option name="we will grow the memory arrays at runtime, seamlessly and dynamically." option="-s ALLOW_MEMORY_GROWTH=1" category="runtime"/>
+  <Option name="Ignore closure testwarnings and errors." option="-s IGNORE_CLOSURE_COMPILER_ERRORS=1" category="runtime"/>
+  <Option name="Includes code to emulate various desktop GL features." option="-s LEGACY_GL_EMULATION=1" category="runtime"/>
+  <Option name="use freetype from emscripten-ports" option="-s USE_FREETYPE=1" category="ports"/>
+  <Option name="use ogg from emscripten-ports" option="-s USE_OGG=1" category="ports"/>
+  <Option name="use vorbis from emscripten-ports" option="-s USE_VORBIS=1" category="ports"/>
+  <Option name="Emscripten’s OpenAL implementation" option="-lopenal" category="ports"/>
+  <Option name="Emscripten’s SDL2 implementation" category="ports" additionalLibs="-s USE_SDL=2"/>
+  <Option name="Set SDL2's image format to png" option="-s SDL2_IMAGE_FORMATS=[&quot;PNG&quot;]" category="ports"/>
+  <Option name="Emscripten’s Webgl2 implementation" category="ports" additionalLibs="-s USE_WEBGL2=1"/>
+  <Option name="No optimizations (default)." option="-O0" category="optimization"/>
+  <Option name="Simple optimizations." option="-O1" category="optimization"/>
+  <Option name="Like '-O1', but enables more optimizations." option="-O2" category="optimization" additionalLibs="-O2"/>
+  <Option name="Like '-O2', but with additional optimizations that may take longer to run." option="-O3" category="optimization" additionalLibs="-O3"/>
+  <Option name="Like '-O3', but focuses more on code size." option="-Os" category="optimization" additionalLibs="-Os"/>
+  <Option name="Like '-Os', but reduces code size even further, and may take longer to run." option="-Oz" category="optimization" additionalLibs="-Oz"/>
+  <Command name="CompileObject" value="$compiler $options $includes -c $file -o $object"/>
+  <Command name="LinkConsoleExe" value="$linker $libdirs $link_objects $libs $link_options -o $(TARGET_OUTPUT_DIR)$exe_name.$(outputformat)"/>
+  <RegEx name="Fatal error" type="error" msg="1">
+    <![CDATA[FATAL:[ \t]*(.*)]]>
+  </RegEx>
+  <RegEx name="'In function...' info" type="info" msg="2" file="1">
+    <![CDATA[([][{}() \t#%$~[:alnum:]&_:+/\.-]+):[ \t]+([iI]n ([cC]lass|[cC]onstructor|[dD]estructor|[fF]unction|[mM]ember [fF]unction).*)]]>
+  </RegEx>
+  <RegEx name="'Skipping N instantiation contexts' info (2)" type="info" msg="3" file="1" line="2">
+    <![CDATA[([][{}() \t#%$~[:alnum:]&_:+/\.-]+):([0-9]+):[0-9]+:[ \t]+(\[[ \t]+[Ss]kipping [0-9]+ instantiation contexts[ \t]+\])]]>
+  </RegEx>
+  <RegEx name="'Skipping N instantiation contexts' info" type="info" msg="3" file="1" line="2">
+    <![CDATA[([][{}() \t#%$~[:alnum:]&_:+/\.-]+):([0-9]+):[ \t]+(\[[ \t]+[Ss]kipping [0-9]+ instantiation contexts[ \t]+\])]]>
+  </RegEx>
+  <RegEx name="'In instantiation' warning" type="warning" msg="2" file="1">
+    <![CDATA[([][{}() \t#%$~[:alnum:]&_:+/\.-]+):[ \t]+([Ii]n [Ii]nstantiation.*)]]>
+  </RegEx>
+  <RegEx name="'Required from' warning" type="warning" msg="3" file="1" line="2">
+    <![CDATA[([][{}() \t#%$~[:alnum:]&_:+/\.-]+):([0-9]+):[0-9]+:[ \t]+([Rr]equired from.*)]]>
+  </RegEx>
+  <RegEx name="'Instantiated from' info (2)" type="info" msg="3" file="1" line="2">
+    <![CDATA[([][{}() \t#%$~[:alnum:]&_:+/\.-]+):([0-9]+):[0-9]+:[ \t]+([Ii]nstantiated from .*)]]>
+  </RegEx>
+  <RegEx name="'Instantiated from' info" type="info" msg="3" file="1" line="2">
+    <![CDATA[([][{}() \t#%$~[:alnum:]&_:+/\.-]+):([0-9]+):[ \t]+([Ii]nstantiated from .*)]]>
+  </RegEx>
+  <RegEx name="Resource compiler error" type="error" msg="3" file="1" line="2">
+    <![CDATA[windres.exe:[ \t]([][{}() \t#%$~[:alnum:]&_:+/\.-]+):([0-9]+):[ \t](.*)]]>
+  </RegEx>
+  <RegEx name="Resource compiler error (2)" type="error" msg="1">
+    <![CDATA[windres.exe:[ \t](.*)]]>
+  </RegEx>
+  <RegEx name="Preprocessor warning" type="warning" msg="4" file="1" line="2">
+    <![CDATA[([][{}() \t#%$~[:alnum:]&_:+/\.-]+):([0-9]+):([0-9]+):[ \t]([Ww]arning:[ \t].*)]]>
+  </RegEx>
+  <RegEx name="Compiler note (2)" type="info" msg="3" file="1" line="2">
+    <![CDATA[([][{}() \t#%$~[:alnum:]&_:+/\.-]+):([0-9]+):[0-9]+:[ \t]([Nn]ote:[ \t].*)]]>
+  </RegEx>
+  <RegEx name="Compiler note" type="info" msg="3" file="1" line="2">
+    <![CDATA[([][{}() \t#%$~[:alnum:]&_:+/\.-]+):([0-9]+):[ \t]([Nn]ote:[ \t].*)]]>
+  </RegEx>
+  <RegEx name="General note" type="info" msg="1">
+    <![CDATA[([Nn]ote:[ \t].*)]]>
+  </RegEx>
+  <RegEx name="Preprocessor error" type="error" msg="3" file="1" line="2">
+    <![CDATA[([][{}() \t#%$~[:alnum:]&_:+/\.-]+):([0-9]+):[0-9]+:[ \t](.*)]]>
+  </RegEx>
+  <RegEx name="Compiler warning (2)" type="warning" msg="3" file="1" line="2">
+    <![CDATA[([][{}() \t#%$~[:alnum:]&_:+/\.-]+):([0-9]+):[0-9]+:[ \t]([Ww]arning:[ \t].*)]]>
+  </RegEx>
+  <RegEx name="Compiler warning" type="warning" msg="3" file="1" line="2">
+    <![CDATA[([][{}() \t#%$~[:alnum:]&_:+/\.-]+):([0-9]+):[ \t]([Ww]arning:[ \t].*)]]>
+  </RegEx>
+  <RegEx name="Undefined reference (2)" type="error" msg="3" file="1" line="2">
+    <![CDATA[[][{}() \t#%$~[:alnum:]&_:+/\.-]+\.o:([][{}() \t#%$~[:alnum:]&_:+/\.-]+):([0-9]+):[ \t](undefined reference.*)]]>
+  </RegEx>
+  <RegEx name="Compiler error (2)" type="error" msg="3" file="1" line="2">
+    <![CDATA[([][{}() \t#%$~[:alnum:]&_:+/\.-]+):([0-9]+):[0-9]+:[ \t](.*)]]>
+  </RegEx>
+  <RegEx name="Compiler error" type="error" msg="3" file="1" line="2">
+    <![CDATA[([][{}() \t#%$~[:alnum:]&_:+/\.-]+):([0-9]+):[ \t](.*)]]>
+  </RegEx>
+  <RegEx name="Linker warning" type="warning" msg="2" file="1">
+    <![CDATA[([][{}() \t#%$~[:alnum:]&_:+/\.-]+):\(\.text\+[0-9a-fA-FxX]+\):[ \t]([Ww]arning:[ \t].*)]]>
+  </RegEx>
+  <RegEx name="Linker error" type="error" msg="3" file="1" line="2">
+    <![CDATA[([][{}() \t#%$~[:alnum:]&_:+/\.-]+):([0-9]+):[0-9]+:[ \t](.*)]]>
+  </RegEx>
+  <RegEx name="Linker error (2)" type="error" msg="2" file="1">
+    <![CDATA[[][{}() \t#%$~[:alnum:]&_:+/\.-]+\(.text\+[0-9A-Za-z]+\):([ \tA-Za-z0-9_:+/\.-]+):[ \t](.*)]]>
+  </RegEx>
+  <RegEx name="Linker error (3)" type="error" msg="2" file="1">
+    <![CDATA[([][{}() \t#%$~[:alnum:]&_:+/\.-]+):\(\.text\+[0-9a-fA-FxX]+\):(.*)]]>
+  </RegEx>
+  <RegEx name="Linker error (lib not found)" type="error" msg="2" file="1">
+    <![CDATA[.*(ld.*):[ \t](cannot find.*)]]>
+  </RegEx>
+  <RegEx name="Linker error (cannot open output file)" type="error" msg="2;3" file="1">
+    <![CDATA[.*(ld.*):[ \t](cannot open output file.*):[ \t](.*)]]>
+  </RegEx>
+  <RegEx name="Linker error (unrecognized option)" type="error" msg="2" file="1">
+    <![CDATA[.*(ld.*):[ \t](unrecognized option.*)]]>
+  </RegEx>
+  <RegEx name="Compiler error (unrecognized option)" type="error" msg="1">
+    <![CDATA[.*cc.*:[ \t]([Uu]nrecognized.*option.*)]]>
+  </RegEx>
+  <RegEx name="No such file or directory" type="error" msg="2" file="1">
+    <![CDATA[.*:(.*):[ \t](No such file or directory.*)]]>
+  </RegEx>
+  <RegEx name="Undefined reference" type="error" msg="2" file="1">
+    <![CDATA[([][{}() \t#%$~[:alnum:]&_:+/\.-]+):[ \t](undefined reference.*)]]>
+  </RegEx>
+  <RegEx name="General error" type="error" msg="1">
+    <![CDATA[([Ee]rror:[ \t].*)]]>
+  </RegEx>
+  <RegEx name="General warning" type="warning" msg="1">
+    <![CDATA[([Ww]arning:[ \t].*)]]>
+  </RegEx>
+  <RegEx name="Auto-import info" type="info" msg="1">
+    <![CDATA[([Ii]nfo:[ \t].*)\(auto-import\)]]>
+  </RegEx>
+  <RegEx name="Linker warning (different sized sections)" type="warning" msg="2" file="1">
+    <![CDATA[([][{}() \t#%$~[:alnum:]&_:+/\.-]+):[ \t]+(duplicate section.*has different size)]]>
+  </RegEx>
+  <Sort CFlags="-std=c89 -std=gnu89 -std=c90 -std=gnu90 -std=iso9899:1990 -std=iso9899:1994 -std=c99 -std=gnu99 -std=iso9899:1999 -std=c11 -std=gnu11 -std=iso9899:2011 -std=c17 -std=iso9899:2017"/>
+  <Sort CPPFlags="-std=c++98 -std=gnu++98 -std=c++03 -std=gnu++03 -std=c++11 -std=gnu++11 -std=c++14 -std=gnu++14 -std=c++17 -std=gnu++17 -std=c++20 -std=gnu++20 -static-libstdc++ -shared-libstdc++ -fpermissive -fdeduce-init-list -fcheck-new -fstrict-enums -Weffc++ -Wctor-dtor-privacy -Wdelete-non-virtual-dtor -Wliteral-suffix -Wc++11-compat -Wnoexcept -Wnon-virtual-dtor -Wreorder -Wstrict-null-sentinel -Wno-non-template-friend -Wnon-template-friend -Wold-style-cast -Woverloaded-virtual -Wno-pmf-conversions -Wsign-promo -fno-rtti -fno-threadsafe-statics"/>
+</CodeBlocks_compiler_options>
