@@ -13,7 +13,7 @@ If you included the Codeblocks launcher during the installation there are two pl
 One for the the regular Codeblocks and one for the Codeblocks launcher. You can install the profile for either or both but the directories will be different.  
 
 For the regular the Codeblocks the settings are sored in:  
-*C:\Users\\<USER>\AppData\Roaming\CodeBlocks*  
+*C:\Users\USER\AppData\Roaming\CodeBlocks*  
 For the Codeblocks launcher the stettings are stored in:  
 *C:\Program Files\CodeBlocks\AppData\codeblocks*  
 
